@@ -30,8 +30,6 @@ function applyMask(str, mask, target) {
     const nonChars = [...mask.matchAll(/[^_]/gi)].map(a => a.index);
 
     $(nonChars).each((k, i) => {
-        if (str.length < i) return;
-
         str = shiftIn(str, i, mask.charAt(i));
     });
 

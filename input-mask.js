@@ -38,7 +38,7 @@ function applyMask(str, mask, target) {
 
     displayMask = target.data('display-mask') || false;
 
-    if (!displayMask | str.length === mask.length) {
+    if (!displayMask || str.length === mask.length) {
         target.val(str);
         return;
     }

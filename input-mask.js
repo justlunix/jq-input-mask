@@ -55,6 +55,7 @@ function getRealValue(str) {
 
 function shiftIn(str, index, chr) {
     if (index === str.length) return str.substr(0, index) + chr;
+    if (index > str.length) return str;
 
     return str.substr(0, index) + chr + str.substr(index);
 }

@@ -17,7 +17,6 @@ $('input[data-mask]').on('keydown', e => {
 
     if (key === 'Backspace' && val.length > 0) {
         val = val.substr(0, val.length - 1);
-        console.log(val);
     }
 
     if (val.length > scoreCount) return false;

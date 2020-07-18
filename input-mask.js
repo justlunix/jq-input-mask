@@ -13,6 +13,8 @@ $('input[data-mask]').on('keydown', e => {
     const mask = target.data('mask');
     const scoreCount = (mask.match(/_/g) || []).length; // number of allowed chars
 
+    if (key === 'Tab') return true;
+
     let val = getRealValue(target.val() + (key.length === 1 ? key : ''));
 
     if (key === 'Backspace' && val.length > 0) {

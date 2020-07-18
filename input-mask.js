@@ -48,7 +48,7 @@ function applyMask(str, mask, target) {
         str += mask.substr(cursor, mask.length - 1);
 
         target.val(str);
-        target.get(0).setSelectionRange(cursor,cursor);
+        target.get(0).setSelectionRange(cursor, cursor);
     }
 }
 

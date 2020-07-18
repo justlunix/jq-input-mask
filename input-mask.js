@@ -36,7 +36,20 @@ function applyMask(str, mask, target) {
         str = shiftIn(str, i, mask.charAt(i));
     });
 
-    target.val(str);
+    displayMask = target.data('display-mask') || false;
+
+    if (!displayMask | str.length === mask.length) {
+        target.val(str);
+        return;
+    }
+
+    if (str.length !== mask.length) {
+        const cursor = str.length;
+        str += mask.substr(cursor, mask.length - 1);
+
+        target.val(str);
+        target.get(0).setSelectionRange(cursor,cursor);
+    }
 }
 
 function getRealValue(str) {
